@@ -1,0 +1,20 @@
+{
+  "name": "mqtt_nosql_logger",
+  "version": "1.0.0",
+  "description": "Logs all topic messages to a database",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "MQTT",
+    "LOGGER"
+  ],
+  "author": "Marcel Ochsendorf",
+  "license": "MIT",
+  "dependencies": {
+    "mqtt": "^2.18.2",
+    "nano": "^6.4.4",
+    "sha256": "^0.2.0"
+  }
+}

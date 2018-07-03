@@ -1,0 +1,6 @@
+{
+    "couch_db_url":"http://127.0.0.1:5984",
+    "db_name":"mqtt_log",
+    "mqtt_broker_url":"mqtt://127.0.0.1",
+    "mqtt_topics":["#"]
+}
