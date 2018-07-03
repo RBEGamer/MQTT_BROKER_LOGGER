@@ -1,6 +1,9 @@
 # MQTT2DB LOGGER
 
-
+## FEATURES
+* logs specified mqtt messages to couchdb
+* simple usage and installation
+* automatic json parse
 
 
 
