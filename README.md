@@ -27,6 +27,14 @@ The config of the logger is very simple. Here are the required fields to modifiy
 After editing the `config.json` file, you can run the logger. Generate some mqtt messages and check the Database and the console output.
 
 
+## SAMPLE LOG OUTPUT
+
+### JSON PAYLOD
+![Gopher image](/documentation/sample_log_json.png)
+
+### NORMAL PAYLOAD
+![Gopher image](/documentation/sample_log_normal.png)
+
 
 
 ## TODO
