@@ -21,11 +21,11 @@ function IsJsonString(str) {
 
 
 mqtt_client.on('connect', function () {
-    mqtt_client.subscribe("test");
+ 
 
     for (let index = 0; index < config.mqtt_topics.length; index++) {
         const element = config.mqtt_topics[index];
-   //     mqtt_client.subscribe(element);
+        mqtt_client.subscribe(element);
     }
    
     
