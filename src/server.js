@@ -3,6 +3,7 @@ var nano = require('nano')(config.couch_db_url);
 var mqtt = require('mqtt');
 var sha256 = require('sha256');
 var mqtt_client = mqtt.connect(config.mqtt_broker_url);
+var uuidv1 = require('uuid/v1');
 
 nano.db.create(config.db_name);
 var db = nano.db.use(config.db_name);
@@ -13,9 +14,14 @@ var db = nano.db.use(config.db_name);
 
 function IsJsonString(str) {
     try {
-        return JSON.parse(str);
+        var o = JSON.parse(str);
+        if (o && typeof o === "object") {
+            return o;
+        }else{
+            return str + "";
+        }
     } catch (e) {
-        return str;
+        return str + "";
     }
 }
 
@@ -38,7 +44,9 @@ mqtt_client.on('message', function (topic, message) {
     var tmp = {
         "topic": topic,
         "payload":IsJsonString(message.toString()),
-        "timestamp":Math.round(new Date().getTime()/1000)
+        "timestamp":Math.round(new Date().getTime()/1000),
+        "uuid":uuidv1(),
+        "payload_hash":sha256(message.toString())
     };
 
     if(db != null){
