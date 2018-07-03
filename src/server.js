@@ -48,7 +48,8 @@ mqtt_client.on('message', function (topic, message) {
                 return;
             }
         });
-
     }
-   // client.end()
-})
+});
+
+
+console.log("LOGGER -- STARTED");
